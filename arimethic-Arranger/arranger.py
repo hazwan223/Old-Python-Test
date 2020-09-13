@@ -36,11 +36,21 @@ def arranger(problems):
             rows["theSecond"].append(row2)
             rows["theThird"].append(row3)
 
-    """space = 4
-    spaces = " " * space"""
-    spaces = "x"
+            if "theFourth" not in rows:
+                rows["theFourth"] = []
+
+            total = num1
+            if operator == "+":
+                total += num2
+            elif operator == "-":
+                total -= num2
+
+            row4 = str(total).rjust(width)
+            rows["theFourth"].append(row4)
+
+    space = 4
+    spaces = " " * space
     rows_values = rows.values()
-    print(rows_values)
     for i in rows_values:
         output = output + spaces.join(i)
         output = output + "\n"
